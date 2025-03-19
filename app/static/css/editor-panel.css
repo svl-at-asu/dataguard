@@ -1,0 +1,110 @@
+/* editor-panel.css: provide the styling for the editor panel */
+/* Center panel configuration */
+#center-top-panel {
+  height: 100%;               /* Take full height of the parent */
+  display: flex;
+  flex-direction: column;      /* Ensures proper stacking of elements */
+  box-sizing: border-box;
+}
+
+#editor-window {
+  display: flex;               /* Enable flexbox for the child elements */
+  flex-wrap: wrap;             /* Ensure that divs wrap when there's not enough space */
+  justify-content: flex-start; /* Align divs from the left */
+  align-items: flex-start;     /* Align items to the top */
+  width: 100%;                 /* Take full width of the container */
+  height: auto;                /* Allow the height to adjust dynamically */
+  box-sizing: border-box;      /* Ensure padding is included in width/height calculations */
+  background-color: #f5f5f5;
+  overflow-x: auto; 
+  font-size: small;
+}
+/* Info icon with greyscale colors and spacing */
+.info-icon {
+  font-size: 18px;
+  color: #7f8c8d; /* Neutral grey */
+  margin-left: 10px;
+  cursor: pointer; /* Makes it clickable */
+}
+
+/* Info message styling with grey background and positioning */
+.info-message {
+  display: none; /* Initially hidden */
+  background-color: #f1f1f1; /* Light grey background */
+  border: 2px solid #555; /* Dark grey border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px;
+  font-family: 'Roboto Slab', serif;
+  color: #333; /* Dark text for readability */
+  line-height: 1.5;
+  position: absolute; /* Positioned relative to parent */
+  top: 55%; /* Vertically centered */
+  left: 50%; /* Horizontally centered */
+  width: 65%; /* Takes 65% of the screen width */
+  max-height: 65vh; /* Maximum height is 65% of the viewport */
+  overflow-y: auto; /* Enable vertical scrollbar if content overflows */
+  transform: translate(-50%, -50%); /* True centering using transform */
+  z-index: 1000; /* Ensures it sits above other elements */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+/* Close icon styling */
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #555; /* Dark grey */
+}
+
+/* Heading within info message with lighter grey */
+.info-message h3 {
+  color: #666; /* Medium grey for headings */
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Styling for unordered list inside the info message */
+.info-message ul {
+  list-style-type: none; /* Remove bullet points */
+  font-size: 16px;
+  padding-left: 0;
+  font-weight: 200; /* Light font weight */
+  color: #333;
+}
+
+/* Styling for individual list items */
+.info-message li {
+  margin-bottom: 5px;
+  color: #444; /* Slightly darker grey for list items */
+}
+
+/* Nested list styling */
+.info-message ul ul {
+  font-size: 14px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding-left: 20px; /* Indent nested lists */
+  color: #555; /* Lighter grey for nested lists */
+}
+
+/* Styling for strong elements inside the info message */
+.info-message strong {
+  color: #333; /* Strong elements in dark grey */
+}
+
+/* Code block styling with greyscale colors */
+.info-message code {
+  background-color: #e0e0e0; /* Light grey background for code blocks */
+  padding: 2px 5px;
+  border-radius: 3px; /* Rounded corners for code block */
+  font-family: 'Roboto Slab', serif, monospace; /* Monospace for code */
+  font-size: 14px;
+  color: #444; /* Dark grey text for code */
+}
+
+/* Class to show the info message when triggered */
+.show-message {
+  display: block; /* Reveal the message when applied */
+}

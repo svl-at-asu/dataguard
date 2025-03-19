@@ -1,0 +1,104 @@
+/* options-panel.css: provide the styling for the options "panel" */
+/* Title styling for options panel */
+.options-title {
+  font-size: 2hw;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+/* Expandable List Styling */
+
+/* Header for specification section, expandable */
+.spec-header {
+  font-size: 16px;
+  font-weight: 200;
+  margin-bottom: 5px;
+  cursor: pointer;
+  color: #34495e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Arrow indicator for expandable list */
+.spec-header::after {
+  content: '▼'; /* Downward arrow */
+  font-size: clamp(16px, 0.75vw, 24px);
+  color: #34495e;
+  transition: transform 0.4s; /* Smooth rotation of arrow */
+}
+
+/* Rotate arrow when collapsed */
+.spec-header.collapsed::after {
+  transform: rotate(-90deg);
+}
+
+/* Hidden list that expands upon clicking spec-header */
+.expandable-list {
+  display: none;
+  padding-left: 10px; /* Slight indentation */
+}
+
+/* Display the expandable list when the header is collapsed */
+.spec-header.collapsed + .expandable-list {
+  display: block;
+}
+
+/* Container for file input and file name display */
+.file-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Hide the default file input field */
+#file-input {
+  display: none;
+}
+
+/* Custom button to trigger file input */
+.load-button {
+  flex: none; /* Fixes button width */
+  margin-right: 5px;
+}
+
+/* Display the selected file name */
+.file-name {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 200;
+  text-align: center;
+  color: #7f8c8d;
+  display: inline-block; /* Inline-block to respect width */
+  width: 15ch; /* Limit display to ~15 characters */
+  white-space: nowrap; /* Prevents text wrapping */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Show "..." for long file names */
+}
+
+/* File Input and URL Input Styling */
+
+/* Container for the URL input */
+.input-group, .url-input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Styling for the URL input field */
+.url-input {
+  display: inline-block;
+  font-family: 'Roboto';
+  width: clamp(10ch, 100%, 100%);
+  padding: 5px;
+  margin-left: 5px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Horizontal separator */
+.separator {
+  border: none;
+  border-top: 2px solid #bdc3c7;
+  margin: 15px 0;
+}
